@@ -2,17 +2,50 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MyPet Life</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MyPet Life v2</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div id="app">
+<div id="startScreen" class="card">
 <h1>🐾 MyPet Life</h1>
-<p>Base profesional del proyecto.</p>
-<button onclick="startGame()">Comenzar</button>
-<div id="output"></div>
+<input id="petName" placeholder="Nombre de tu mascota">
+<div class="pets">
+<button onclick="selectPet('🐱')">🐱</button>
+<button onclick="selectPet('🐶')">🐶</button>
+<button onclick="selectPet('🐰')">🐰</button>
+<button onclick="selectPet('🦊')">🦊</button>
 </div>
+<p>Mascota: <span id="chosen">Ninguna</span></p>
+<button onclick="startGame()">Comenzar aventura</button>
+</div>
+
+<div id="game" class="hidden">
+<header>
+<h2 id="roomTitle">🏠 Sala</h2>
+<div>💰 <span id="coins">100</span> | ⭐ <span id="level">1</span></div>
+</header>
+
+<div id="room" class="room living">
+<div id="pet" class="pet">🐱</div>
+</div>
+
+<div class="stats">
+<label>Hambre <progress id="hunger" max="100" value="100"></progress></label>
+<label>Energía <progress id="energy" max="100" value="100"></progress></label>
+<label>Felicidad <progress id="happy" max="100" value="100"></progress></label>
+</div>
+
+<div class="actions">
+<button onclick="feed()">🍔 Alimentar</button>
+<button onclick="sleepPet()">😴 Dormir</button>
+<button onclick="play()">🎮 Jugar</button>
+<button onclick="changeRoom()">🏠 Cambiar cuarto</button>
+</div>
+
+<p id="msg">Bienvenido.</p>
+</div>
+
 <script src="js/game.js"></script>
 </body>
 </html>
