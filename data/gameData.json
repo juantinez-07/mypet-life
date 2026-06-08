@@ -1,0 +1,15 @@
+{
+  "rooms": [
+    "Sala",
+    "Cocina",
+    "Dormitorio",
+    "Baño",
+    "Jardín"
+  ],
+  "pets": [
+    "Gato",
+    "Perro",
+    "Conejo",
+    "Zorro"
+  ]
+}
